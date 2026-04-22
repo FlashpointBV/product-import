@@ -135,7 +135,7 @@ class HttpCache
         return false;
     }
 
-    public function downloadFromUrl(string $url, string $localTargetFile, array $conditions = null)
+    public function downloadFromUrl(string $url, string $localTargetFile, ?array $conditions = null)
     {
         $responseHeaders = [
             self::UNIX_TIME => time(),
@@ -182,7 +182,6 @@ class HttpCache
         $error = curl_error($ch);
         $httpResponseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        curl_close($ch);
         fclose($fp);
 
         if ($conditions) {
