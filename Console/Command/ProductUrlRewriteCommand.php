@@ -72,7 +72,7 @@ class ProductUrlRewriteCommand extends Command
      * @return int|null
      * @throws Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var UrlRewriteUpdater $urlRewriteUpdater */
         $urlRewriteUpdater = $this->objectManager->create(UrlRewriteUpdater::class);

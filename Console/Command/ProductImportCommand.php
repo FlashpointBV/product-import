@@ -208,7 +208,7 @@ class ProductImportCommand extends Command
      * @return int|null
      * @throws \Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var XmlProductReader $xmlProductReader */
         $xmlProductReader = $this->objectManager->create(XmlProductReader::class);
